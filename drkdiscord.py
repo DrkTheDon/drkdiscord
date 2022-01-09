@@ -45,7 +45,7 @@ def options():
   clearcmd()
   banner()
   print("""
-  [1] Token Generator
+  [1] Token Generator 
   [2] Token Checker (Under Development)
   [3] Nitro Gift Generator
   [4] Nitro Gift Checker (Not Stable)
@@ -237,5 +237,18 @@ def nitrocheck():
 
 # Main Define
 def main():
-    options()
+  clearcmd()
+  print(f"""
+                          {Fore.RED}LICENSE AGREEMNT\n{Fore.LIGHTWHITE_EX}
+                      GNU GENERAL PUBLIC LICENSE
+                       Version 3, 29 June 2007
+
+ Copyright (C) 2007 Free Software Foundation, Inc. <https://fsf.org/>
+ Everyone is permitted to copy and distribute verbatim copies
+ of this license document, but changing it and removing credits is not allowed.
+
+ {Fore.YELLOW}https://github.com/DaRkSurface/drkdiscord/blob/main/LICENSE
+  """)
+  time.sleep(3.3)
+  options()
 main()
