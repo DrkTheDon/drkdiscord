@@ -1,7 +1,7 @@
 # drkdiscord - drk#1337
 ## A Wide AOI tool for discord tool.
 
-![Preview](/assets/preview.png)
+![Preview](/assets/previewpic.png)
 
 ## Installation
 To Install you have to have python 3.x and pip installed on your system. If you have those two installed then we can continue.
