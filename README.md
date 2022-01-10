@@ -1,7 +1,9 @@
 # drkdiscord - drk#1337
 ## A Wide AOI tool for discord.
 
-![Preview](/assets/previewpic.png)
+![Preview](/assets/preview1.png)
+## Selfbot
+![Preview](/assets/preview2.png)
 
 ## Installation
 To Install you have to have python 3.x and pip installed on your system. If you have those two installed then we can continue.
