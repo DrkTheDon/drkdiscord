@@ -328,7 +328,7 @@ def massdm():
       options()
 
   print(pyfade.Fade.Horizontal(pyfade.Colors.blue_to_cyan, '''
-   DRK DISCORD Alpha (V0.9)
+    DRK DISCORD Alpha (V0.9)
   ██████╗ ██████╗ ██╗  ██╗    ███╗   ███╗ █████╗ ███████╗███████╗    ██████╗ ███╗   ███╗
   ██╔══██╗██╔══██╗██║ ██╔╝    ████╗ ████║██╔══██╗██╔════╝██╔════╝    ██╔══██╗████╗ ████║
   ██║  ██║██████╔╝█████╔╝     ██╔████╔██║███████║███████╗███████╗    ██║  ██║██╔████╔██║
@@ -407,25 +407,25 @@ def self_bot():
 
     print(pyfade.Fade.Horizontal(pyfade.Colors.red_to_blue, """
      DRK DISCORD Alpha (V0.9)
-    ██████╗ ██████╗ ██╗  ██╗    ███████╗███████╗██╗     ███████╗██████╗  ██████╗ ████████╗
-    ██╔══██╗██╔══██╗██║ ██╔╝    ██╔════╝██╔════╝██║     ██╔════╝██╔══██╗██╔═══██╗╚══██╔══╝
-    ██║  ██║██████╔╝█████╔╝     ███████╗█████╗  ██║     █████╗  ██████╔╝██║   ██║   ██║   
-    ██║  ██║██╔══██╗██╔═██╗     ╚════██║██╔══╝  ██║     ██╔══╝  ██╔══██╗██║   ██║   ██║   
-    ██████╔╝██║  ██║██║  ██╗    ███████║███████╗███████╗██║     ██████╔╝╚██████╔╝   ██║   
-    ╚═════╝ ╚═╝  ╚═╝╚═╝  ╚═╝    ╚══════╝╚══════╝╚══════╝╚═╝     ╚═════╝  ╚═════╝    ╚═╝   
-                                                                                          
+  ██████╗ ██████╗ ██╗  ██╗    ███████╗███████╗██╗     ███████╗██████╗  ██████╗ ████████╗
+  ██╔══██╗██╔══██╗██║ ██╔╝    ██╔════╝██╔════╝██║     ██╔════╝██╔══██╗██╔═══██╗╚══██╔══╝
+  ██║  ██║██████╔╝█████╔╝     ███████╗█████╗  ██║     █████╗  ██████╔╝██║   ██║   ██║   
+  ██║  ██║██╔══██╗██╔═██╗     ╚════██║██╔══╝  ██║     ██╔══╝  ██╔══██╗██║   ██║   ██║   
+  ██████╔╝██║  ██║██║  ██╗    ███████║███████╗███████╗██║     ██████╔╝╚██████╔╝   ██║   
+  ╚═════╝ ╚═╝  ╚═╝╚═╝  ╚═╝    ╚══════╝╚══════╝╚══════╝╚═╝     ╚═════╝  ╚═════╝    ╚═╝   
+                                                                                        
       
     \n"""))
 
     print("""
-    [1] Mass DM Spammer
-    [2] Id Scraper
-    [3] Coming soon.
+  [1] Mass DM Spammer
+  [2] Id Scraper
+  [3] Coming soon.
 
-    [4] Go back
+  [4] Go back
     
     """)
-    USER_OPT = input("Option: ")
+    USER_OPT = input("Option\n> ")
     if USER_OPT == "1":
       clearcmd()
       massdm()
@@ -433,22 +433,27 @@ def self_bot():
       underdev()
       back()
       clearcmd()
-      selfbot()
+      self_bot()
     elif USER_OPT == "3":
       underdev()
       back()
       clearcmd()
-      selfbot()
+      self_bot()
     elif USER_OPT == "4":
       print(f"{Fore.RED}Going back.")
-      time.sleep(0.7)
+      time.sleep(0.3)
       clearcmd()
       options()
+    else:
+      print(f"{Fore.RED}[-] Did not reckognize {Fore.YELLOW}{USER_OPT}{Fore.YELLOW} Watch if you have hidden spaces!")
+      back()
+      clearcmd()
+      self_bot()
     
 
 def banner():
   print(pyfade.Fade.Horizontal(pyfade.Colors.green_to_red, """
-   V. 0.9 Alpha (January 9th 2022)
+   V. 0.9 Alpha (January 10th 2022)
   ██████╗ ██████╗ ██╗  ██╗    ██████╗ ██╗███████╗ ██████╗ ██████╗ ██████╗ ██████╗ 
   ██╔══██╗██╔══██╗██║ ██╔╝    ██╔══██╗██║██╔════╝██╔════╝██╔═══██╗██╔══██╗██╔══██╗
   ██║  ██║██████╔╝█████╔╝     ██║  ██║██║███████╗██║     ██║   ██║██████╔╝██║  ██║
@@ -477,7 +482,7 @@ def options():
   [2] Token Checker (Under Development)
   [3] Nitro Gift Generator
   [4] Nitro Gift Checker (Not Stable)
-  [5] Selfbot Options
+  [5] Selfbot Options (Not Stable)
 
   [6] Credits
   [7] Settings
