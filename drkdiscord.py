@@ -486,8 +486,8 @@ def options():
   print("""
   [1] Token Generator 
   [2] Token Checker (Under Development)
-  [3] Nitro Gift Generator
-  [4] Nitro Gift Checker (Not Stable)
+  [3] Nitro Gift/Code Generator
+  [4] Nitro Gift/Code Checker
   [5] Selfbot Options (Not Stable)
 
   [6] Credits
@@ -598,7 +598,7 @@ def nitrogenerator():
   time.sleep(1)
 
   howmany = input(f"{Fore.BLUE}[?] How many tokens do you want to generate?: ")
-  print("""
+  print(f"""{Fore.LIGHTWHITE_EX}
 
   LIST
 
@@ -609,11 +609,11 @@ def nitrogenerator():
   which = input(f"{Fore.YELLOW}Option\n> ")
   if which == "1":
     with open("./generated/nitro/nitro.txt", "w+") as file:
+        file.write("##THESE ARE SUPPOSED TO BE USED IN THE CHECKER!!")
+        file.write("\n")
         for i in range(int(howmany)):
             genrandom = ''.join(random.choice(characters) for i in range(24))
-
-            result = f"https://discord.gift/{genrandom}" 
-            file.write(result)
+            file.write(genrandom)
             file.write("\n")
         print(f"\n{Fore.YELLOW}[*] Generating... \n")
         time.sleep(2)
@@ -622,9 +622,7 @@ def nitrogenerator():
     with open("./generated/nitro/nitro.txt", "w+") as file:
         for i in range(int(howmany)):
             genrandom = ''.join(random.choice(characters) for i in range(16))
-
-            result = f"https://discord.gift/{genrandom}" 
-            file.write(result)
+            file.write(genrandom)
             file.write("\n")
         print(f"\n{Fore.YELLOW}[*] Generating... \n")
         time.sleep(2)
