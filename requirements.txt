@@ -1,3 +1,5 @@
 colorama==0.4.3
+discord.py==1.7.3
+discum==1.4.0
 pyfade==3.1
 requests==2.22.0
