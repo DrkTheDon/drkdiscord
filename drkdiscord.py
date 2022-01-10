@@ -37,6 +37,7 @@ drk = 14
 
 
 # Defines
+
 def clearcmd():
     os.system('cls' if os.name == 'nt' else 'clear')
 
@@ -68,7 +69,11 @@ def massdm():
       with open("./selfbot/usedtokens.json", "w", encoding='utf-8') as file:
           json.dump(tokenscheck, file)
   else:
-    pass # Due to bug
+    reset = []
+    with open('./selfbot/alrdyusedtokens.json', 'w', encoding='utf-8') as f:
+        json.dump(reset, f, ensure_ascii=False, indent=4)
+    print(f"{Fore.RED}Resetting already used tokens for the selfbot, you may have to restart the script.")
+    time.sleep(5) 
 
   with open('./selfbot/config.json') as f:
       yamete_kudasai = json.load(f)
@@ -337,7 +342,7 @@ def massdm():
   ╚═════╝ ╚═╝  ╚═╝╚═╝  ╚═╝    ╚═╝     ╚═╝╚═╝  ╚═╝╚══════╝╚══════╝    ╚═════╝ ╚═╝     ╚═╝
                                                                                       '''))
   print(f'''{Fore.LIGHTWHITE_EX}                                             PART OF: {Fore.YELLOW}DRK DISCORD 
-  {Fore.RED}THIS SCRIPT IS SKIDDED FROM hoemotion (https://gihub.com/hoemotion) {Fore.LIGHTBLUE_EX}forked in: https://github.com/DaRkSurface 
+  {Fore.RED}MAJORITY OF THIS CODE IS FROM hoemotion (https://gihub.com/hoemotion) {Fore.LIGHTBLUE_EX}forked in: https://github.com/DaRkSurface 
   ''')
   time.sleep(1.5)
   @bot.event
@@ -358,7 +363,7 @@ def massdm():
   try:
       bot.run(token, bot=False)
   except Exception as e:
-      print(f"{Fore.RED}TOKEN ERROR - {e}")
+      print(f"{Fore.RED}TOKEN ERROR - {e} \n If this keeps happening try and remove the json contents in usedtokens.json")
       print(token)
       time.sleep(10)
       os.execv(sys.executable, ['python'] + sys.argv)
@@ -371,6 +376,7 @@ def idscraper():
       yamete_kudasai = json.load(f)
   token = yamete_kudasai['token']
   bot = discum.Client(token=token)
+  
 
   def close_after_fetching(resp, guild_id):
       if bot.gateway.finishedMemberFetching(guild_id):
@@ -572,6 +578,7 @@ def generatetoken():
 def nitrogenerator():
 
   randomgift = "https://discord.gift/N2td3PXwMdFCRgyj" # Just an expired link to watch.
+  randomgift = "https://discord.gift/CwyBhRjAsnGw6GzCkgE56NVW"
   characters = "abcdefghijklmnopqrstuwyxzABCDEFGHIJKLMNOPQRSTUWYXZ1234567890"
   
   print(pyfade.Fade.Horizontal(pyfade.Colors.blue_to_cyan, """
@@ -591,17 +598,38 @@ def nitrogenerator():
   time.sleep(1)
 
   howmany = input(f"{Fore.BLUE}[?] How many tokens do you want to generate?: ")
+  print("""
 
-  with open("./generated/nitro/nitro.txt", "w+") as file:
-      for i in range(int(howmany)):
-          genrandom = ''.join(random.choice(characters) for i in range(16))
+  LIST
 
-          result = f"https://discord.gift/{genrandom}" 
-          file.write(result)
-          file.write("\n")
-      print(f"\n{Fore.YELLOW}[*] Generating... \n")
-      time.sleep(2)
-      print(f"{Fore.GREEN}[+] Generated {Fore.RED}{howmany}{Fore.GREEN} Discord token(s). Saved to ./generated/nitro/nitro.txt ")
+  [1] Promotion Gift Code (24 chars)
+  [2] Discord User Gift Code (16 chars)
+  
+  """)
+  which = input(f"{Fore.YELLOW}Option\n> ")
+  if which == "1":
+    with open("./generated/nitro/nitro.txt", "w+") as file:
+        for i in range(int(howmany)):
+            genrandom = ''.join(random.choice(characters) for i in range(24))
+
+            result = f"https://discord.gift/{genrandom}" 
+            file.write(result)
+            file.write("\n")
+        print(f"\n{Fore.YELLOW}[*] Generating... \n")
+        time.sleep(2)
+        print(f"{Fore.GREEN}[+] Generated {Fore.RED}{howmany}{Fore.GREEN} Discord Nitro Gift Links(s). Saved to ./generated/nitro/nitro.txt ")
+  elif which == "2":
+    with open("./generated/nitro/nitro.txt", "w+") as file:
+        for i in range(int(howmany)):
+            genrandom = ''.join(random.choice(characters) for i in range(16))
+
+            result = f"https://discord.gift/{genrandom}" 
+            file.write(result)
+            file.write("\n")
+        print(f"\n{Fore.YELLOW}[*] Generating... \n")
+        time.sleep(2)
+        print(f"{Fore.GREEN}[+] Generated {Fore.RED}{howmany}{Fore.GREEN} Discord token(s). Saved to ./generated/nitro/nitro.txt ")
+
 
   back()
   file.close()
@@ -632,6 +660,8 @@ def nitrocheck():
     response = requests.get(URL)
     if response.status_code == 200:
         return True
+    elif response.status_code == 10038: 
+        return False
     else: 
         return False
  
