@@ -863,7 +863,10 @@ def id_logger():
     except Exception as e:
         print(f"{Fore.RED}TOKEN ERROR - {e}")
         error_msg()
-
+def credits():
+    print(pyfade.Fade.Horizontal(pyfade.Colors.red_to_green, f"DRK DISCORD is a project made by drk#1337 however the selfbot part is skidded hard."))
+    back()
+    options()
 def self_bot():
   test = True
   if test == True:
@@ -888,7 +891,7 @@ def self_bot():
   [4] Go back
     
     """)
-    USER_OPT = input("Option\n> ")
+    USER_OPT = input(f"Option\n{Fore.RED}> ")
     if USER_OPT == "1":
       clearcmd()
       massdm()
@@ -950,7 +953,7 @@ def options():
   [8] Quit
   
   """)
-  USER_OPTION = input("Option: ")
+  USER_OPTION = input(f"Option\n{Fore.RED}> ")
   if USER_OPTION == "1":
     clearcmd()
     generatetoken()
@@ -968,9 +971,9 @@ def options():
     clearcmd()
     self_bot()
   elif USER_OPTION == "6":
-    underdev()
-    back()
-    options()
+      clearcmd()
+      banner()
+      credits()
   elif USER_OPTION == "7":
     underdev()
     back()
