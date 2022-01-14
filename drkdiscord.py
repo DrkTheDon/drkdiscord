@@ -945,11 +945,11 @@ def options():
   [1] Token Generator 
   [2] Token Checker (Under Development)
   [3] Nitro Gift/Code Generator
-  [4] Nitro Gift/Code Checker (Not Stable)
+  [4] Nitro Gift/Code Checker (Fixing Proxies Issue, Not Stable)
   [5] Selfbot Options (Not Stable)
 
   [6] Credits
-  [7] Settings
+  [7] Settings (Under Development)
   [8] Quit
   
   """)
@@ -1054,13 +1054,31 @@ def nitrogenerator():
   """)
   print("[*] Setting Up...\n")
   time.sleep(1)
+  with open("./generated/nitro/nitro.txt", "w+") as nitrof:
+      content = nitrof.readlines()
+      if len(content) > 1:
+          doyou = f"{Fore.RED}[-]{Fore.LIGHTWHITE_EX} Used Codes detected! Would you like to delete them?\n{Fore.YELLOW}y/n >"
+          if doyou == "y":
+              fnitro = open("./generated/nitro/nitro.txt", "w") # Added this cus of sum weird bug.
+              fnitro.truncate(0)
+              print(f"{Fore.GREEN}[+]{Fore.LIGHTWHITE_EX} Removed content in ./generated/nitro/nitro.txt\n Restarting...")
+              time.sleep(1)
+              clearcmd()
+              nitrogenerator()
+          if doyou == "n":
+              pass
+          else:
+              print(f"{Fore.YELLOW}[*]{Fore.LIGHTWHITE_EX}Did not reckognize input, Try again.")
+              time.sleep(1.5)
+              clearcmd()
+              nitrogenerator()
 
   howmany = input(f"{Fore.BLUE}[?] How many tokens do you want to generate?: ")
   print(f"""{Fore.LIGHTWHITE_EX}
 
   LIST
 
-  [1] Promotion Gift Code (24 chars)
+  [1] Promotion Gift Code (24 chars & Non Classic Nitro Guaranteed)
   [2] Discord User Gift Code (16 chars)
   
   """)
@@ -1085,13 +1103,13 @@ def nitrogenerator():
         print(f"\n{Fore.YELLOW}[*] Generating... \n")
         time.sleep(2)
         print(f"{Fore.GREEN}[+] Generated {Fore.RED}{howmany}{Fore.GREEN} Discord token(s). Saved to ./generated/nitro/nitro.txt ")
-
-
+  
   back()
   file.close()
   options()
 
 def nitrocheck():
+
   init()
 
   print(pyfade.Fade.Horizontal(pyfade.Colors.blue_to_cyan, """
@@ -1172,4 +1190,5 @@ def main():
   """)
   time.sleep(3.3)
   options()
+  
 main()
