@@ -15,4 +15,3 @@ Then Just run the script usuing ```python3 drkdiscord.py```
 ## Other Information
 This project is under development meaning it will not function as intended and many things will be added till I release the first functional version.
 ![Preview](/assets/drkdiscord.gif)
-###A WORK IN PROGRESS
