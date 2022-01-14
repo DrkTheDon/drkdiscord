@@ -1,4 +1,6 @@
 # drkdiscord - drk#1337
+![Preview](/assets/preview2.png)
+A WORK IN PROGRESS
 ## A Wide AOI tool for discord.
 
 ![Preview](/assets/preview1.png)
