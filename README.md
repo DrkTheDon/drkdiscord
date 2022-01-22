@@ -13,6 +13,7 @@ Then Just run the script usuing ```python3 drkdiscord.py```
 ![Preview](/assets/preview2.png)
 
 ## Other Information
+KEEP IN NOTE! THIS PROJECT WAS MADE FOR ME TO TEST STUFF OUT AND TO TEST HOW SELFBOTS WORK IN A TOOL ETC, MANY PARTS OF THE SELFBOT IS SKIDDED!
 This project is under development meaning it will not function as intended and many things will be added till I release the first functional version.
 
 
