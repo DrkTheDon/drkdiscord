@@ -5,7 +5,7 @@
 ## A useful tool to gen/check discord stuff        ##
 ## https://voidsecurity.ml                         ##
 ## Coded by: drk                                   ##
-## NOTE: some parts are skidded due to laziness.   ##
+## NOTE: Line 47 to 872 is skidded cus Im lazy.    ##
 #####################################################
 
 # Imports
@@ -1190,7 +1190,7 @@ def main():
  Everyone is permitted to copy and distribute verbatim copies
  of this license document, but changing it and removing credits is not allowed.
 
- {Fore.YELLOW}https://github.com/DaRkSurface/drkdiscord/blob/main/LICENSE
+ {Fore.YELLOW}https://github.com/DrkTheDon/drkdiscord/blob/main/LICENSE
   """)
   time.sleep(3.3)
   options()
